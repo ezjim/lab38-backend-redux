@@ -36,13 +36,14 @@ describe('lab38-be Routes', () => {
         });
       });
   });
+  
   it('gets a list of Todos via GET', async() => {
     await Todo.create({
       title: 'finish your labs',
       description: 'lab29/34',
       target: 'are you close?'
     });
-    
+
     return request(app)
       .get('/api/v1/todos')
       .then(res => {
